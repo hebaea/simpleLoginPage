@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:tasktwo/signupPage.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -7,20 +8,27 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Login'))),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: NetworkImage(
-                  'https://cdn2.vectorstock.com/i/thumb-large/06/76/brown-hair-businesswoman-avatar-woman-face-profile-vector-21960676.jpg'),
-            ),
-            const SizedBox(height: 20),
-            Form(
-              child: SingleChildScrollView(
+      appBar: AppBar(
+        title: const Text('login'),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              Container(
+                width: 300,
+                height: 300,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            'https://cdni.iconscout.com/illustration/premium/thumb/login-page-2578971-2147152.png'),
+                        fit: BoxFit.cover)),
+              ),
+              const SizedBox(height: 20),
+              Form(
                 child: Column(
                   children: [
                     TextFormField(
@@ -40,14 +48,18 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('login'),
+                    SizedBox(
+                      height: 50,
+                      width: 350,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('login'),
+                      ),
                     ),
                     const SizedBox(height: 20),
                     RichText(
                       text: TextSpan(
-                        text: 'Don\'t have an account?',
+                        text: 'Don\'t have an account ? ',
                         style:
                             const TextStyle(color: Colors.black, fontSize: 15),
                         children: [
@@ -56,15 +68,22 @@ class LoginPage extends StatelessWidget {
                               style: const TextStyle(
                                   color: Colors.blueAccent, fontSize: 15),
                               recognizer: TapGestureRecognizer()
-                                ..onTap = () {}),
+                                ..onTap = () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SignUpPage(),
+                                    ),
+                                  );
+                                }),
                         ],
                       ),
                     ),
                   ],
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
