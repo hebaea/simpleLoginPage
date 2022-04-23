@@ -11,10 +11,23 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
+  static List<Widget> _widgetOptions = <Widget>[
+    ListView.builder(
+      itemBuilder: (buildContext, index) {
+        return Card(
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0GyB7NOkm-PRH34wXiTfxOGZjBeLDGjW8cc_fmiORToJKXQsk9Rcbmsm0sC5mPccpwQo&usqp=CAU'),
+            ),
+            title: Text("Heba Elosta"),
+            subtitle: Text("hebaelosta98@gmail.com"),
+          ),
+        );
+      },
+      itemCount: 10,
+      padding: EdgeInsets.all(5),
+      scrollDirection: Axis.vertical,
     ),
     Text(
       'Index 1: Business',
@@ -36,7 +49,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('home'),
+        title: const Text('home'),
         centerTitle: true,
       ),
       body: Center(
