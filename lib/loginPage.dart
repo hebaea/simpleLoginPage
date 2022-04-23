@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:tasktwo/homePage.dart';
 import 'package:tasktwo/signupPage.dart';
 
 class LoginPage extends StatelessWidget {
@@ -34,6 +35,7 @@ class LoginPage extends StatelessWidget {
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.email),
                         labelText: 'Email Address',
                         border: OutlineInputBorder(),
                       ),
@@ -41,8 +43,8 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     TextFormField(
                       obscureText: true,
-                      keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.password),
                         labelText: 'Password',
                         border: OutlineInputBorder(),
                       ),
@@ -52,7 +54,14 @@ class LoginPage extends StatelessWidget {
                       height: 50,
                       width: 350,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
                         child: const Text('login'),
                       ),
                     ),

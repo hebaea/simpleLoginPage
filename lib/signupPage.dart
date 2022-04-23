@@ -2,6 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:tasktwo/loginPage.dart';
 
+import 'homePage.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -42,12 +44,14 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: const InputDecoration(
                         labelText: 'Full name',
                         border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.people),
                       ),
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.email),
                         labelText: 'Email',
                         border: OutlineInputBorder(),
                       ),
@@ -55,6 +59,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     const SizedBox(height: 20),
                     DropdownButtonFormField(
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.man),
                         border: OutlineInputBorder(),
                       ),
                       value: _selectedValue,
@@ -84,6 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     TextFormField(
                       obscureText: true,
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.password),
                         labelText: 'Password',
                         border: OutlineInputBorder(),
                       ),
@@ -93,7 +99,14 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: 50,
                       width: 350,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
                         child: const Text('sign up'),
                       ),
                     ),
