@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "860459215882",
+    "project_id": "flutterwidgets-ea68c",
+    "storage_bucket": "flutterwidgets-ea68c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860459215882:android:ff14dee0586533ca5703f3",
+        "android_client_info": {
+          "package_name": "com.example.tasktwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860459215882-ucv678ag72b6gckdd0u7shaqfihtmljj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm_kbqZSe_dC_Bi9lyR5IWv13oRFn5LOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860459215882-ucv678ag72b6gckdd0u7shaqfihtmljj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
