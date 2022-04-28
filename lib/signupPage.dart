@@ -242,6 +242,7 @@ class _SignUpPageState extends State<SignUpPage> {
             .then((value) => {postDetailsToFirestore()})
             .catchError((e) {
           // Fluttertoast.showToast(msg: e!.message);
+          print(e.message);
         });
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
@@ -275,7 +276,7 @@ class _SignUpPageState extends State<SignUpPage> {
   postDetailsToFirestore() async {
     // calling our firestore
     // calling our user model
-    // sedning these values
+    // sending these values
 
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User? user = _auth.currentUser;
@@ -294,7 +295,9 @@ class _SignUpPageState extends State<SignUpPage> {
         .set(userModel.toMap());
     // Fluttertoast.showToast(msg: "Account created successfully :) ");
 
-    Navigator.pushAndRemoveUntil((context),
-        MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
+    Navigator.pushAndRemoveUntil(
+        (context),
+        MaterialPageRoute(builder: (context) => const HomePage()),
+        (route) => false);
   }
 }
